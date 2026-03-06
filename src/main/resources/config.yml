@@ -1,0 +1,10 @@
+# PaperMixins config!
+# before PaperMixins will load any mixins, you must uncomment the below string list and fill in your java arguments! They should ideally match the args that start your server.
+# Don't include system properties like -Dsystem.property=true, do include args like nogui. In general, if your argument comes *before* -jar <server.jar>, you *don't* include it, if your arg comes *after* -jar <server.jar> you *do* include it
+# This is needed since PaperMixins calls net.minecraft.server.main(OptionSet options) for a second time from a context that doesn't have access to the arguments used to start the server
+
+# Only after configuring the below will PaperMixins attempt to load any mixins
+
+# Note: in almost all cases it is probably fine to just uncomment the below line by removing the # in-front of it
+
+#java-args: []
