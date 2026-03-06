@@ -29,10 +29,9 @@ After creating a project, you should add [Fabric Mixin](https://github.com/Fabri
     <groupId>net.fabricmc</groupId>
     <artifactId>sponge-mixin</artifactId>
     <version>0.17.0+mixin.0.8.7</version>
-    <scope>compile</scope> <!-- Will be updated to provided, check the note below -->
+    <scope>provided</scope>
 </dependency>
 ```
-NOTE: In a future commit to PaperMixins, Fabric Mixin will be correctly loaded by the PaperMixins ClassLoader. At that point, the `<scope>` of the dependency in this will be updated to `provided` instead of `compile`, so watch out for that!
 
 Next, you should add a `papermixins.yml` to your resources:
 ```yml

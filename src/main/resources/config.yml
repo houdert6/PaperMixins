@@ -5,6 +5,7 @@
 
 # Only after configuring the below will PaperMixins attempt to load any mixins
 
-# Note: in almost all cases it is probably fine to just uncomment the below line by removing the # in-front of it
+# Note: in almost all cases it is probably fine to just uncomment the below lines by removing the #s in-front of it
 
-#java-args: []
+#java-args:
+#  - nogui

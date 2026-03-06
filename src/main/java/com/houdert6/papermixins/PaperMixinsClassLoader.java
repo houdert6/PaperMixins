@@ -54,6 +54,8 @@ public class PaperMixinsClassLoader extends URLClassLoader {
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
+            } else if (name.startsWith("org.spongepowered")) {
+                return getClass().getClassLoader().loadClass(name); // Make sure the mixins are able to load/access spongepowered mixin classes
             } else if (!name.startsWith("net.minecraft") && !name.startsWith("com.mojang") && !name.startsWith("org.bukkit") && !name.startsWith("io.papermc") && !name.startsWith("com.destroystokyo") && !name.startsWith("ca.spottedleaf") && !name.startsWith("org.spigotmc") && !name.startsWith("co.aikar") && !name.startsWith("me.lucko") && !name.startsWith("alternate.current")) {
                 // An interesting question is whether to use a blacklist or whitelist for what classes get passed through and which ones are defined. I chose a whitelist simply because the errors that arise from a non-whitelisted class that should be whitelisted are significantly easier to understand and fix than the errors which arise from a non-blacklisted class that should be blacklisted
                 return super.loadClass(name, resolve);
