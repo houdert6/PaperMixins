@@ -5,4 +5,5 @@ api-version: '1.20'
 load: STARTUP
 authors: [ houdert6 ]
 description: Allows servers to use Mixins to enhance their capabilities and influence over Minecraft.
+website: https://github.com/houdert6/PaperMixins
 bootstrapper: com.houdert6.papermixins.PaperMixinsBootstrap

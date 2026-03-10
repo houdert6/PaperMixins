@@ -11,12 +11,25 @@ Note that this README will *not* be a tutorial on how to code a mixin, there's a
 
 You can create a mixin mod for PaperMixins in two ways:
 - Creating a mixin mod from scratch as explained below
-- Cloning the Example Mixin [to be added]
+- Cloning the [Example Mixin](https://github.com/houdert6/examplemixin)
 
 ### Creating a Mixin mod from scratch
-To get started, you can create a new Java project depending on the Paper API. If using IntelliJ IDEA with the Minecraft Development plugin, you can create a new Paper plugin, and then delete the automatically generated plugin.yml and starter classes.
+To get started, you can create a new Java project depending on the Paper API/NMS. If using gradle as a build system, refer to Paper's documentation on [paperweight-userdev](https://docs.papermc.io/paper/dev/userdev/) for depending on the Paper API and NMS. If using maven as a build system, you'll need to manually depend on the Paper server jar for NMS.
 
-After creating a project, you should add [Fabric Mixin](https://github.com/FabricMC/Mixin) as a dependency. If using Maven, add the following to your `pom.xml`
+After creating a project, you should add [Fabric Mixin](https://github.com/FabricMC/Mixin) as a dependency. If using Gradle Kotlin DSL, add the following to your `build.gradle.kts` file:
+```kotlin
+repositories {
+    maven("https://maven.fabricmc.net/") // Fabric maven repo
+    // Other repos...
+}
+
+dependencies {
+    compileOnly("net.fabricmc:sponge-mixin:0.17.0+mixin.0.8.7") // Fabric's spongepowered Mixin fork
+    // Other dependencies (e.g., paper dev bundle)...
+}
+```
+
+If using Maven, add the following to the respective sections of your `pom.xml`
 ```xml
 <!-- Fabric maven repo -->
 <repository>
