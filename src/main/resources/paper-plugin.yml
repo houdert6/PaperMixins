@@ -1,5 +1,5 @@
 name: PaperMixins
-version: '1.0.0'
+version: '1.0.1'
 main: com.houdert6.papermixins.PaperMixins
 api-version: '1.20'
 load: STARTUP
